@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exercise 3</title>
+    <title>Exercise 3 Table Dengan Field Filter</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <center>
-        <h1>Daftar Planet</h1>
-    </center>
+  <div id="ww">
+    <h2> SWAPI Star War Api </h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Film</th>
+    <th style="width:40%;">Episode</th>
+  </tr>
+<tr>
+    <td>A New Hope</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Attack of the Clones</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>The Phantom Menace</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Revenge of the Sith</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Return of the Jedi</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>The Empire Strikes Back</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>The Force Awakens</td>
+    <td>7</td>
+  </tr>
+
+</table>
+
+<script>
+function myFunction() {
+  let input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4">
+          <h4>MY LINKS</h4>
+          <p>
+            <a href="www.facebook.com/alfiyan.syukran">Facebook</a><br/>
+            <a href="#">Twitter</a><br/>
+            <a href="#">Github</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="copyrights">
+    <div class="container">
+      <p>
+        &copy; Copyrights <strong>Alfyan_VN</strong>. All Rights Reserved
+      </p>
+    </div>
+  </div>
+
 </body>
 </html>
