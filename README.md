@@ -1,2 +1,4 @@
 # DevC JavaScript Development Course
-Exercise 1
+Exercise 3
+
+
